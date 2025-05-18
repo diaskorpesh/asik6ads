@@ -1,0 +1,22 @@
+This repository contains a lightweight Java library for working with graphs and running classic search algorithms.
+The key design choice is to drop the separate Edge class: every Vertex<T> object owns a map of neighbour → weight, 
+so both the topology and edge weights live inside the vertices themselves.
+Graphs:
+1)UnweightedGraph<T> – undirected by default; every edge is treated as weight 1.
+2)WeightedGraph<T> – undirected by default; edges carry explicit positive weights.
+Algorithms included:
+1)BreadthFirstSearch – finds the shortest path by number of edges.
+2)DepthFirstSearch – classic pre-order DFS traversal.
+3)DijkstraSearch – computes the minimum-cost path for non-negative weights.
+Quick start:
+1)Place all .java files in one folder.
+2)Compile with javac *.java (Java 17 +).
+3)Run the demo with java Main — it builds a sample graph and prints the paths produced by Dijkstra, DFS, and BFS.
+
+The code is small, easy to extend (e.g., make the graphs directed, add A* or Bellman–Ford), and released under the MIT license.
+
+
+
+
+
+
